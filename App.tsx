@@ -3,7 +3,7 @@ import { InferGetServerSidePropsType } from "next";
 import React from "react";
 import Slider from "../axios-fe-exercise/src/components/Slider/Slider";
 
-const App = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+export const App = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const { data } = props;
 
   return (
@@ -37,15 +37,14 @@ const App = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
 //   };
 // }
 export async function getServerSideProps(context) {
-  const { data: streamData } = await axios.get(
-    "https://api.axios.com/api/render/stream/content/"
-  );
+  const url = "https://api.axios.com/api/render/stream/content/";
+  const { data: streamData } = await axios.get(url);
   const { results } = streamData;
-  const storiesToGet = results.map((id) =>
-    axios.get(`https://api.axios.com/api/render/content/${id}`)
+  const getStories = results.map((id) =>
+    axios.get(`${url}${id}`)
   );
-  const rawStoriesData = await Promise.all(storiesToGet);
-  const data = rawStoriesData.map((result) => {
+  const rawStories = await Promise.all(getStories);
+  const data = rawStories.map((result) => {
     return {
       key: results.id,
       headline: result.headline,
