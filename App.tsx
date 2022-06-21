@@ -47,9 +47,10 @@ export async function getServerSideProps(context) {
   const rawStoriesData = await Promise.all(storiesToGet);
   const data = rawStoriesData.map((result) => {
     return {
+      key: results.id,
       headline: result.headline,
       displayName: result.authors[0].display_name,
-      section: result.sections[0].name,
+      sectionLabel: result.sections[0].name,
       primaryImage: result.byline_photo,
       publishedDate: result.published_date,
       permaLink: result.permalink,
@@ -59,7 +60,7 @@ export async function getServerSideProps(context) {
   if (!streamData && !data) {
     return {
       props: {
-        storiesData: [],
+        data: [],
       },
     };
   }

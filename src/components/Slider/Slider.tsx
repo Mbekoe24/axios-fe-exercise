@@ -6,8 +6,8 @@ import { Slide } from "./Slide";
 
 const Slider = ({data}: SliderProps) => {
   return (
-
-  //     <a href="#slide-1">1</a>
+// loop through to create a link each
+  // <a href="#slide-1">1</a>
   // <a href="#slide-2">2</a>
   // <a href="#slide-3">3</a>
   // <a href="#slide-4">4</a>
@@ -23,9 +23,11 @@ const Slider = ({data}: SliderProps) => {
               <Slide
                 key={item.key}
                 headline={item.headline}
+                displayName={item.displayName}
+                sectionLabel={item.sectionLabel}
+                publishedDate={item.publishedDate}
+                primaryImage={item.primaryImage}
                 permaLink={item.permaLink}
-                publishedDate={item.published_date}
-                imageURL={item.image_url}
               />
             );
           })}

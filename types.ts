@@ -1,11 +1,11 @@
 export interface SlideProps {
   key: string,
   headline: string,
-  name: string,
+  displayName: string,
   sectionLabel: string,
   permaLink: string, 
   publishedDate: string, 
-  imageUrl: string
+  primaryImage: string
 }
 
 
