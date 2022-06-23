@@ -16,33 +16,11 @@ const Index = (
   );
 };
 export default Index;
-// export async function getContent() {
-//   const url = "https://api.axios.com/api/render/stream/content/";
-//   const data = await axios.get(url);
-//   const latestStoriesIds = data.data?.results;
 
-//   const stories = latestStoriesIds.map((id) =>
-//     axios.get(`https://api.axios.com/api/render/content/${id}`)
-//   );
-//   const rawStories = await Promise.all(stories);
-//   const storyData = rawStories.map((result) => result.data);
-
-//   console.log(storyData);
-
-//   if (!data && !storyData) {
-//     return {
-//       notFound: true,
-//     };
-//   }
-//   return {
-//     props: {
-//       storyData,
-//     },
-//   };
-// }
 export async function getServerSideProps(context) {
-  const url = "https://api.axios.com/api/render/stream/content/";
-  const { data: streamData } = await axios.get(url); // console.log("streamData", streamData);
+  const { data: streamData } = await axios.get(
+    "https://api.axios.com/api/render/stream/content/"
+  ); // console.log("streamData", streamData);
   const { results } = streamData;
   const getStories = results.map((id) =>
     axios.get(`https://api.axios.com/api/render/content/${id}`)
@@ -52,7 +30,7 @@ export async function getServerSideProps(context) {
   const data = rawStories.map(({ data: result }) => {
     console.log("result", result);
     return {
-      key: result?.id,
+      id: result?.id,
       headline: result?.headline,
       displayName: result?.authors?.[0]?.display_name,
       sectionLabel: result?.sections?.[0]?.name,

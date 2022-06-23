@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Slider.module.scss";
-import { SliderProps, SlideProps } from "../../../types";
-import { Slide } from "./Slide";
+import { SliderProps, ApiResponse } from "./types";
+import { Slide } from "../Slide";
 
 const Slider = ({ data }: SliderProps) => {
   return (
@@ -14,11 +14,11 @@ const Slider = ({ data }: SliderProps) => {
     <div className={styles["slider"]}>
       {data && (
         <>
-          {data?.map((item: SlideProps) => {
+          {data?.map((item: ApiResponse) => {
             console.log(item.headline);
             return (
               <Slide
-                key={item.key}
+                key={item.id}
                 headline={item.headline}
                 displayName={item.displayName}
                 sectionLabel={item.sectionLabel}
