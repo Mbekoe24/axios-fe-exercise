@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Slider.module.scss";
 import { SliderProps, ApiResponse } from "./types";
 import { Slide } from "../Slide";
-
+import "./Slider.module.scss";
 const Slider = ({ data }: SliderProps) => {
   return (
     // loop through to create a link each
@@ -23,6 +23,7 @@ const Slider = ({ data }: SliderProps) => {
                 headline={item.headline}
                 displayName={item.displayName}
                 sectionLabel={item.sectionLabel}
+                topicName={item.topicName}
                 publishedDate={item.publishedDate}
                 primaryImage={item.primaryImage}
                 permaLink={item.permaLink}

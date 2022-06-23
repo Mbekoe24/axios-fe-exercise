@@ -1,5 +1,6 @@
 import React from "react";
 import { SlideProps } from "./types";
+import "../Slider/Slider.module.scss";
 
 export const Slide = (props: SlideProps) => {
   return (
@@ -10,13 +11,9 @@ export const Slide = (props: SlideProps) => {
         </a>
         <h1>{props.headline}</h1>
         <span>
-          {props.publishedDate} - {props.sectionLabel}
+          {props.publishedDate} - {props.topicName}
         </span>
       </div>
-      {/* <div id="slide-2">2</div>
-      <div id="slide-3">3</div>
-      <div id="slide-4">4</div>
-      <div id="slide-5">5</div> */}
     </div>
   );
 };
