@@ -10,7 +10,7 @@ const Index = (
 
   return (
     <>
-      <h1>Hello World</h1>
+      <h1> World</h1>
       <Slider data={data} />
     </>
   );

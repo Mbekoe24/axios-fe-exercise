@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Head, Main, NextScript, Html } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class AxiosDocument extends Document {
@@ -14,7 +14,7 @@ export default class AxiosDocument extends Document {
 
   render() {
     return (
-      <html>
+      <Html>
         <Head>
           <title>Axios Front End Excerise</title>
           {this.props.styleTags}
@@ -23,7 +23,7 @@ export default class AxiosDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }
