@@ -4,7 +4,6 @@ import { SlideProps } from "../../../types";
 export const Slide = (props: SlideProps) => {
   return (
 
-    ////// testing if data populates
     <div className="slides">
       <div id="slide-1">
         <a href={props.permaLink}>

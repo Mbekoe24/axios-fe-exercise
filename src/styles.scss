@@ -1,0 +1,28 @@
+/* Don't need button navigation */
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background: linear-gradient(to bottom, #74ABE2, #5563DE);
+  font-family: "Ropa Sans", sans-serif;
+}
+
+img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,23 +1,20 @@
-
 import React from "react";
-import "./Slider.scss"
-import { SliderProps, SlideProps  } from "../../../types";
+import styles from "./Slider.module.scss";
+import { SliderProps, SlideProps } from "../../../types";
 import { Slide } from "./Slide";
 
-const Slider = ({data}: SliderProps) => {
+const Slider = ({ data }: SliderProps) => {
   return (
-// loop through to create a link each
-  // <a href="#slide-1">1</a>
-  // <a href="#slide-2">2</a>
-  // <a href="#slide-3">3</a>
-  // <a href="#slide-4">4</a>
-  // <a href="#slide-5">5</a>
-    <div className="slider">
-      
+    // loop through to create a link each
+    // <a href="#slide-1">1</a>
+    // <a href="#slide-2">2</a>
+    // <a href="#slide-3">3</a>
+    // <a href="#slide-4">4</a>
+    // <a href="#slide-5">5</a>
+    <div className={styles["slider"]}>
       {data && (
         <>
           {data?.map((item: SlideProps) => {
-          
             console.log(item.headline);
             return (
               <Slide
@@ -38,6 +35,3 @@ const Slider = ({data}: SliderProps) => {
 };
 
 export default Slider;
-
-
-

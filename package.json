@@ -11,6 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/react": "^18.0.14",
     "axios": "^0.27.2",
     "next": "^11.1.0",
     "react": "^17.0.2",
@@ -35,6 +36,7 @@
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
     "prettier-eslint": "^13.0.0",
+    "sass": "^1.53.0",
     "ts-jest": "^27.0.4"
   }
 }
