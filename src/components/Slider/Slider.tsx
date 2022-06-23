@@ -14,11 +14,12 @@ const Slider = ({ data }: SliderProps) => {
     <div className={styles["slider"]}>
       {data && (
         <>
-          {data?.map((item: ApiResponse) => {
+          {data?.map((item: ApiResponse, index) => {
             console.log(item.headline);
             return (
               <Slide
                 key={item.id}
+                htmlId={`slide-${index + 1}`}
                 headline={item.headline}
                 displayName={item.displayName}
                 sectionLabel={item.sectionLabel}

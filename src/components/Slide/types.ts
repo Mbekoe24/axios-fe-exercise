@@ -1,8 +1,9 @@
-export interface ApiResponse extends SlideProps{
+export interface ApiResponse extends Omit<SlideProps, "htmlId">{
   id: string
 }
 export interface SlideProps {
   headline: string,
+  htmlId: string,
   displayName: string,
   sectionLabel: string,
   permaLink: string, 

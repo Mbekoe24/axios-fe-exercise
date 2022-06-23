@@ -4,7 +4,7 @@ import { SlideProps } from "./types";
 export const Slide = (props: SlideProps) => {
   return (
     <div className="slides">
-      <div id="slide-1">
+      <div id={props.htmlId}>
         <a href={props.permaLink}>
           <img src={props.primaryImage} alt="" />
         </a>
@@ -13,10 +13,10 @@ export const Slide = (props: SlideProps) => {
           {props.publishedDate} - {props.sectionLabel}
         </span>
       </div>
-      <div id="slide-2">2</div>
+      {/* <div id="slide-2">2</div>
       <div id="slide-3">3</div>
       <div id="slide-4">4</div>
-      <div id="slide-5">5</div>
+      <div id="slide-5">5</div> */}
     </div>
   );
 };
