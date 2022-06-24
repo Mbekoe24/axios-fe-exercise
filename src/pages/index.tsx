@@ -36,9 +36,10 @@ export async function getServerSideProps(context) {
       headline: result?.headline,
       displayName: result?.authors?.[0]?.display_name,
       // sectionLabel: result?.sections?.[0]?.name || ,
-      htmlId:'',
+      htmlId: "",
+      altText: result?.alt_text ? true : "",
       topicName: result?.topics?.[0]?.name,
-      primaryImage: result?.byline_photo,
+      primaryImage: result?.base_image_url ? true : "",
       publishedDate: result?.published_date,
       permaLink: result?.permalink,
     };
@@ -48,7 +49,8 @@ export async function getServerSideProps(context) {
   if (!streamData && !data) {
     return {
       props: {
-        data: [],},
+        data: [],
+      },
     };
   }
 

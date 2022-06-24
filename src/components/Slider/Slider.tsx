@@ -24,6 +24,7 @@ const Slider = ({ data }: SliderProps) => {
                     displayName={item.displayName}
                     // sectionLabel={item.sectionLabel}
                     topicName={item.topicName}
+                    altText={item.altText}
                     publishedDate={item.publishedDate}
                     primaryImage={item.primaryImage}
                     permaLink={item.permaLink}

@@ -15,12 +15,13 @@ body {
 }
 
 img {
-  object-fit: cover;
+  object-fit:cover;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100px;
-  height: 100px;
+  
+  min-width: 200px;
+  min-height: 150px;
 }
 
 * {
