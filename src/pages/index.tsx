@@ -10,7 +10,6 @@ const Index = (
 
   return (
     <>
-      <h1> World</h1>
       <Slider data={data} />
     </>
   );
@@ -26,7 +25,9 @@ export async function getServerSideProps(context) {
   const getStories = results.map((id) =>
     axios.get(`https://api.axios.com/api/render/content/${id}`)
   );
+  console.log(getStories);
   const rawStories = await Promise.all(getStories);
+  console.log("LOLLL");
   console.log("rawStories", rawStories);
   const data = rawStories.map(({ data: result }) => {
     console.log("result", result);
@@ -34,19 +35,20 @@ export async function getServerSideProps(context) {
       id: result?.id,
       headline: result?.headline,
       displayName: result?.authors?.[0]?.display_name,
-      sectionLabel: result?.sections?.[0]?.name,
+      // sectionLabel: result?.sections?.[0]?.name || ,
+      htmlId:'',
       topicName: result?.topics?.[0]?.name,
       primaryImage: result?.byline_photo,
       publishedDate: result?.published_date,
       permaLink: result?.permalink,
     };
   });
+  console.log("data line 46", data);
 
   if (!streamData && !data) {
     return {
       props: {
-        data: [],
-      },
+        data: [],},
     };
   }
 

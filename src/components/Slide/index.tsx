@@ -4,16 +4,17 @@ import "../Slider/Slider.module.scss";
 
 export const Slide = (props: SlideProps) => {
   return (
-    <div className="slides">
-      <div id={props.htmlId}>
+  
+    <div id={props.htmlId}>
+      {/* {props.htmlId} */}
         <a href={props.permaLink}>
           <img src={props.primaryImage} alt="" />
         </a>
-        <h1>{props.headline}</h1>
+        <p>{props.headline}</p>
         <span>
           {props.publishedDate} - {props.topicName}
         </span>
       </div>
-    </div>
+   
   );
 };
