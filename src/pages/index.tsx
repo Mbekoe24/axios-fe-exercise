@@ -37,13 +37,19 @@ export async function getServerSideProps(context) {
       displayName: result?.authors?.[0]?.display_name,
       // sectionLabel: result?.sections?.[0]?.name || ,
       htmlId: "",
-      altText: result?.alt_text ? true : "",
-      topicName: result?.topics?.[0]?.name,
-      primaryImage: result?.base_image_url ? true : "",
+      altText: result?.primary_image
+        ? result?.primary_image?.alt_text
+        : result?.social_image.alt_text || "",
+      topicName: result?.topics?.[0]?.name
+        ? result?.topics?.[0]?.name
+        : result?.audience?.name,
+      // socialImage: result?.social_image || "",
+      primaryImage: result?.primary_image?.base_image_url || "",
       publishedDate: result?.published_date,
       permaLink: result?.permalink,
     };
   });
+
   console.log("data line 46", data);
 
   if (!streamData && !data) {

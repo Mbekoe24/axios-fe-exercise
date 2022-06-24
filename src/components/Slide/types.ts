@@ -6,6 +6,7 @@ export interface SlideProps {
   htmlId: string,
   displayName: string,
   altText?: string,
+  // socialImage?: string,
   // sectionLabel: string,
   topicName: string,
   permaLink: string, 

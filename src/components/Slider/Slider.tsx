@@ -7,10 +7,8 @@ const Slider = ({ data }: SliderProps) => {
   console.log(data, "22");
   return (
     <>
-      <div className={styles["slider"]}>
-        {data.map((d, i) => {
-          return <a key={i} href={`#slide-${i + 1}`}>{`${i + 1}`}</a>;
-        })}
+      <h1>More from Axios.com</h1>
+      <div className={styles["slider"] + " news-slider"}>
         <div className="slides">
           {data && (
             <>
@@ -24,6 +22,7 @@ const Slider = ({ data }: SliderProps) => {
                     displayName={item.displayName}
                     // sectionLabel={item.sectionLabel}
                     topicName={item.topicName}
+                    // socialImage={item.socialImage}
                     altText={item.altText}
                     publishedDate={item.publishedDate}
                     primaryImage={item.primaryImage}
@@ -34,6 +33,9 @@ const Slider = ({ data }: SliderProps) => {
             </>
           )}
         </div>
+        {data.map((d, i) => {
+          return <a key={i} href={`#slide-${i + 1}`}>{`${i + 1}`}</a>;
+        })}
       </div>
     </>
   );
