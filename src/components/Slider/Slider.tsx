@@ -5,6 +5,10 @@ import { Slide } from "../Slide";
 import "./Slider.module.scss";
 const Slider = ({ data }: SliderProps) => {
   console.log(data, "22");
+
+  const handleClick = () => {
+    window.open("https://www.axios.com/");
+  };
   return (
     <>
       <h1>More from Axios.com</h1>
@@ -33,10 +37,18 @@ const Slider = ({ data }: SliderProps) => {
             </>
           )}
         </div>
+
         {data.map((d, i) => {
-          return <a key={i} href={`#slide-${i + 1}`}>{`${i + 1}`}</a>;
+          return (
+            <a className="pagination" key={i} href={`#slide-${i + 1}`}>{`${
+              i + 1
+            }`}</a>
+          );
         })}
       </div>
+      <button className="axios-button" onClick={handleClick}>
+        Visit Axios.com
+      </button>
     </>
   );
 };

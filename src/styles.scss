@@ -11,24 +11,25 @@ body {
   align-items: center;
   justify-content: center;
   background: #faf7f2;
-  font-family: NB International Pro, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: NB International Pro, ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif,
+    BlinkMacSystemFont, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
   color: #333335;
 }
 
+* {
+  box-sizing: border-box;
+}
 img {
-  object-fit:cover;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
   min-width: 17.75rem;
   border-radius: 10px;
-  // min-width: 200px;
   min-height: 10rem;
   max-height: 13rem;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 
@@ -36,22 +37,18 @@ div.news-slider {
   width: 800px;
   text-align: center;
   overflow: hidden;
-   
+}
+.pagination {
+  display: inline-block;
+  margin-top: 1rem 0 0.5rem 0;
 }
 
 .slides {
   display: flex;
-  overflow-x: auto;
-  scrollbar-color: light light;
+  overflow-x: auto; 
   scroll-snap-type: x mandatory;
- 
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-
-  /*
-  scroll-snap-points-x: repeat(300px);
-  scroll-snap-type: mandatory;
-  */
 }
 
 .slides::-webkit-scrollbar {
@@ -68,7 +65,7 @@ div.news-slider {
   background: transparent;
 }
 
-.slides>div {
+.slides > div {
   scroll-snap-align: start;
   flex-shrink: 0;
   width: 300px;
@@ -86,8 +83,6 @@ div.news-slider {
   font-size: 1rem;
   flex-direction: column;
 }
-
-
 
 .author-info {
   background: rgba(0, 0, 0, 0.75);
@@ -111,41 +106,46 @@ div.news-slider {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  margin: 0 0 0.5rem 0;
-  // position: relative;
+  margin-top: 1rem;
   flex-direction: column-reverse;
   height: 280px;
 }
 
-.slides a>img {
+.slides a > img {
   width: 280px;
   height: 190px;
 }
 
-.slides .info-box {
-    // margin-left: 95%;
-    width: inherit;
-  }
 
-  .info-box span {
-    color: #656568;
-  }
-
-  .info-box button {
-    all: unset;
+.info-box span {
+  color: #656568;
+}
+.axios-button {
+  display: flex;
+  background: #2559da;
+  color: white;
+  margin-top: 1rem;
+  width: 22rem;
+  border-radius: 10px;
+  padding-top: 1rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  justify-content: center;
+  height: 50px;
+  border: none;
   cursor: pointer;
-  color: #2559da;
-  }
-.slider>a:active {
+}
+
+.slider > a:active {
   top: 1px;
 }
 
-.slider>a:focus {
+.slider > a:focus {
   background: #000;
 }
 
-@supports (scroll-snap-type) {
-  .slider>a {
-    display: none;
-  }
-}
+// @supports (scroll-snap-type) {
+//   .slider > a {
+//     display: none;
+//   }
+// }
