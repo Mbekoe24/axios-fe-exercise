@@ -32,20 +32,15 @@ img {
   max-height: 13rem;
 }
 
-
 div.news-slider {
   width: 800px;
   text-align: center;
   overflow: hidden;
 }
-.pagination {
-  display: inline-block;
-  margin-top: 1rem 0 0.5rem 0;
-}
 
 .slides {
   display: flex;
-  overflow-x: auto; 
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -116,7 +111,6 @@ div.news-slider {
   height: 190px;
 }
 
-
 .info-box span {
   color: #656568;
 }
@@ -141,7 +135,19 @@ div.news-slider {
 }
 
 .slider > a:focus {
-  background: #000;
+  background: white;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 15rem;
+}
+
+.pagination {
+  display: inline-block;
+  text-decoration: none;
+  color: #333335;
 }
 
 // @supports (scroll-snap-type) {
@@ -149,3 +155,11 @@ div.news-slider {
 //     display: none;
 //   }
 // }
+
+// The minimum width of the screen is 375px. The horizontal breakpoint is at 980px.
+
+@media (min-width: 980px) {
+  .Slider {
+    display: flex;
+  }
+}

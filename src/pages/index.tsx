@@ -44,7 +44,9 @@ export async function getServerSideProps(context) {
         ? result?.topics?.[0]?.name
         : result?.audience?.name,
       // socialImage: result?.social_image || "",
-      primaryImage: result?.primary_image?.base_image_url || "",
+      primaryImage: result?.primary_image?.base_image_url
+        ? result?.primary_image?.base_image_url
+        : result?.byline_photo,
       publishedDate: result?.published_date,
       permaLink: result?.permalink,
     };
