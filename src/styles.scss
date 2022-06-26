@@ -3,7 +3,7 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
+  margin: 0;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 }
 img {
   object-fit: cover;
-  position: absolute;
+  // position: relative;
   top: 0;
   left: 0;
   min-width: 17.75rem;
@@ -41,9 +41,9 @@ div.news-slider {
 .slides {
   display: flex;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  // scroll-snap-type: x mandatory;
+  // scroll-behavior: smooth;
+  // -webkit-overflow-scrolling: touch;
 }
 
 .slides::-webkit-scrollbar {
@@ -78,37 +78,13 @@ div.news-slider {
   font-size: 1rem;
   flex-direction: column;
 }
-
-.author-info {
-  background: rgba(0, 0, 0, 0.75);
-  color: white;
-  padding: 0.75rem;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin: 0;
-}
-
-.author-info a {
-  color: white;
-}
-
-.slides a {
-  display: inline-flex;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin-top: 1rem;
-  flex-direction: column-reverse;
-  height: 280px;
-}
-
 .slides a > img {
   width: 280px;
   height: 190px;
+}
+.slides a {
+  margin-top: 1rem;
+  flex-direction: column-reverse;
 }
 
 .info-box span {
@@ -130,14 +106,9 @@ div.news-slider {
   cursor: pointer;
 }
 
-.slider > a:active {
-  top: 1px;
-}
-
 .slider > a:focus {
   background: white;
 }
-
 .pagination-container {
   display: flex;
   justify-content: space-around;
@@ -145,9 +116,19 @@ div.news-slider {
 }
 
 .pagination {
-  display: inline-block;
   text-decoration: none;
-  color: #333335;
+  border-radius: 50%;
+  margin: 0 auto;
+  color: black;
+  width: 1.2rem;
+  height: 1.25rem;
+  &:focus {
+    background: white;
+  }
+  &:active {
+    font-weight: 800;
+    top: 1px;
+  }
 }
 
 // @supports (scroll-snap-type) {
@@ -158,8 +139,33 @@ div.news-slider {
 
 // The minimum width of the screen is 375px. The horizontal breakpoint is at 980px.
 
-@media (min-width: 980px) {
-  .Slider {
+@media (max-width: 980px) {
+  // html {
+  //   overflow: none;
+  // }
+  body {
+    display: block;
+  }
+  .pagination-container {
+    display: none;
+  }
+  .axios-button {
+    margin-top: 1.5rem;
+  }
+  h1 {
+    text-align: center;
+  }
+  .slides {
     display: flex;
+    align-items: center;
+    overflow: auto;
+    flex-direction: column;
+    color: red;
+  }
+  .slides > div {
+    margin-right: 0;
+  }
+  div.news-slider {
+    width: 100%;
   }
 }

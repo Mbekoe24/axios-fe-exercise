@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Slider.module.scss";
 import { SliderProps, ApiResponse } from "./types";
 import { Slide } from "../Slide";
-// import "./Slider.module.scss";
+import "./Slider.module.scss";
 const Slider = ({ data }: SliderProps) => {
   console.log(data, "22");
 
@@ -40,12 +40,9 @@ const Slider = ({ data }: SliderProps) => {
         <div className="pagination-container">
           {data.map((d, i) => {
             return (
-              <a
-                tabIndex={-1}
-                className="pagination"
-                key={i}
-                href={`#slide-${i + 1}`}
-              >{`${i + 1}`}</a>
+              <a className="pagination" key={i} href={`#slide-${i + 1}`}>{`${
+                i + 1
+              }`}</a>
             );
           })}
         </div>
