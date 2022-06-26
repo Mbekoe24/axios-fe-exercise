@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Slider.module.scss";
 import { SliderProps, ApiResponse } from "./types";
 import { Slide } from "../Slide";
-import "./Slider.module.scss";
+
 const Slider = ({ data }: SliderProps) => {
   console.log(data, "22");
 
@@ -24,9 +24,7 @@ const Slider = ({ data }: SliderProps) => {
                     htmlId={`slide-${index + 1}`}
                     headline={item.headline}
                     displayName={item.displayName}
-                    // sectionLabel={item.sectionLabel}
                     topicName={item.topicName}
-                    // socialImage={item.socialImage}
                     altText={item.altText}
                     publishedDate={item.publishedDate}
                     primaryImage={item.primaryImage}

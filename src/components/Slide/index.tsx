@@ -1,6 +1,5 @@
 import React from "react";
 import { SlideProps } from "./types";
-import "../Slider/Slider.module.scss";
 
 export const Slide = (props: SlideProps) => {
   const formattedDate = new Date(props.publishedDate).toLocaleDateString(
