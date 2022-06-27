@@ -1,20 +1,22 @@
-import Document, { Head, Main, NextScript, Html } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import Document, { Head, Main, NextScript, Html } from "next/document";
+import { ServerStyleSheet } from "styled-components";
 
 export default class AxiosDocument extends Document {
   static getInitialProps({ renderPage }) {
-    const sheet = new ServerStyleSheet()
+    const sheet = new ServerStyleSheet();
 
-    const page = renderPage((App) => (props) => sheet.collectStyles(<App {...props} />))
+    const page = renderPage(
+      (App) => (props) => sheet.collectStyles(<App {...props} />)
+    );
 
-    const styleTags = sheet.getStyleElement()
+    const styleTags = sheet.getStyleElement();
 
-    return { ...page, styleTags }
+    return { ...page, styleTags };
   }
 
   render() {
     return (
-      <Html>
+      <html lang="en-us">
         <Head>
           <title>Axios Front End Excerise</title>
           {this.props.styleTags}
@@ -23,7 +25,7 @@ export default class AxiosDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </Html>
-    )
+      </html>
+    );
   }
 }

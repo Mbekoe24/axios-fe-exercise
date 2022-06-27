@@ -1,7 +1,6 @@
+import Slide from "../Slide";
 import React from "react";
-import styles from "./Slider.module.scss";
 import { SliderProps, ApiResponse } from "./types";
-import { Slide } from "../Slide";
 
 const Slider = ({ data }: SliderProps) => {
   const handleClick = () => {
@@ -10,12 +9,11 @@ const Slider = ({ data }: SliderProps) => {
   return (
     <>
       <h1>More from Axios.com</h1>
-      <div className={styles["slider"] + " news-slider"}>
+      <div className=" news-slider">
         <div className="slides">
           {data && (
             <>
               {data?.map((item: ApiResponse, index) => {
-                console.log(item.headline);
                 return (
                   <Slide
                     key={item.id}

@@ -54,6 +54,9 @@ const getAltText = (data) => {
   } else if (data.social_image !== null) {
     result = data.social_image.alt_text;
   }
+  if (!result == null) {
+    return "accesibility fail missing alt text";
+  }
   return result;
 };
 const getDisplayName = (data) => {
@@ -76,7 +79,6 @@ export const getServerSideProps = async () => {
   let contentUrlList, data, rawStories, result;
   contentUrlList = await fetchContentUrls();
   rawStories = await fetchStoriesData(contentUrlList);
-  console.log(rawStories, "my raw stories");
   data = formatStories(rawStories);
   result = {
     props: {

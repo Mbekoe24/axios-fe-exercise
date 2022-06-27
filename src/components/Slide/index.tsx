@@ -1,7 +1,7 @@
 import React from "react";
 import { SlideProps } from "./types";
 
-export const Slide = (props: SlideProps) => {
+const Slide = (props: SlideProps) => {
   const formattedDate = new Date(props.publishedDate).toLocaleDateString(
     "en-US",
     {
@@ -12,8 +12,8 @@ export const Slide = (props: SlideProps) => {
   return (
     <div id={props.htmlId}>
       <a href={props.permaLink} target="_blank" rel="noopener noreferrer">
-        <img src={props.primaryImage} alt={props.altText} />
-      </a>{" "}
+        <img src={props.primaryImage} alt={props.altText || props.headline} />
+      </a>
       <div className="info-box">
         <p>{props.headline}</p>
         <span>
@@ -24,3 +24,4 @@ export const Slide = (props: SlideProps) => {
     </div>
   );
 };
+export default Slide;

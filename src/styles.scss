@@ -40,19 +40,18 @@ div.news-slider {
 
 .slides {
   display: flex;
+  overflow-y: hidden;
   overflow-x: auto;
-  // scroll-snap-type: x mandatory;
-  // scroll-behavior: smooth;
-  // -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
 }
 
 .slides::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
 }
 
 .slides::-webkit-scrollbar-thumb {
-  background: transparent;
+  background: black;
   border-radius: 10px;
 }
 
@@ -62,6 +61,7 @@ div.news-slider {
 
 .slides > div {
   scroll-snap-align: start;
+  scroll-snap-type: x mandatory;
   flex-shrink: 0;
   width: 300px;
   height: 300px;
@@ -132,17 +132,14 @@ div.news-slider {
 }
 
 // @supports (scroll-snap-type) {
-//   .slider > a {
-//     display: none;
-//   }
+//   // .slider > a {
+//   //   display: none;
+//   // }
 // }
 
 // The minimum width of the screen is 375px. The horizontal breakpoint is at 980px.
 
 @media (max-width: 980px) {
-  // html {
-  //   overflow: none;
-  // }
   body {
     display: block;
   }
