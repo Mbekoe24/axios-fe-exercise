@@ -4,8 +4,6 @@ import { SliderProps, ApiResponse } from "./types";
 import { Slide } from "../Slide";
 
 const Slider = ({ data }: SliderProps) => {
-  console.log(data, "22");
-
   const handleClick = () => {
     window.open("https://www.axios.com/");
   };
