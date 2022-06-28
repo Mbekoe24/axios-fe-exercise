@@ -2,30 +2,32 @@
 
 exports[`<Slide /> Should render correctly 1`] = `
 <div
-  id=""
+  id="slide-2"
 >
   <a
     data-testid="story-link"
-    href=""
+    href="https://www.axios.com/2022/06/28/the-gamification-of-gambling"
     rel="noopener noreferrer"
     target="_blank"
   >
     <img
-      alt=""
+      alt="Illustration of a hand of high cards in five separate mobile phones. "
       data-testid="story-img"
-      src=""
+      src="https://images.axios.com/qM2XadizW4NmxcXRDhDPZg7ZAtQ=/fit-in/1366x1366/2022/06/28/1656438051676.jpg"
     />
   </a>
   <div
     class="info-box"
   >
-    <p />
+    <p>
+      The gamification of gambling
+    </p>
     <span>
       <time>
-        Invalid Date
+        6/28/2022
       </time>
        - 
-      
+      Economy & Business
     </span>
   </div>
 </div>

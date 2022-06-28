@@ -1,5 +1,3 @@
-/* Don't need button navigation */
-
 html,
 body {
   height: 100%;
@@ -20,7 +18,6 @@ body {
 }
 img {
   object-fit: cover;
-  // position: relative;
   top: 0;
   left: 0;
   min-width: 17.75rem;
@@ -128,12 +125,6 @@ div.news-slider {
   }
 }
 
-// @supports (scroll-snap-type) {
-//   // .slider > a {
-//   //   display: none;
-//   // }
-// }
-
 // The minimum width of the screen is 375px. The horizontal breakpoint is at 980px.
 
 @media (max-width: 980px) {
@@ -153,7 +144,9 @@ div.news-slider {
     display: flex;
     align-items: center;
     overflow: auto;
-    flex-direction: column;
+  }
+  .slides::-webkit-scrollbar {
+    display: none;
   }
   .slides > div {
     margin-right: 0;

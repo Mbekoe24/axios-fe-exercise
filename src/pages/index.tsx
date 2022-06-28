@@ -37,6 +37,7 @@ const formatStories = (rawStories = []) => {
         permaLink: result.permalink,
       };
     }
+    console.log(rawStories);
   });
 };
 const fetchStoriesData = async (contentUrlList = []) => {

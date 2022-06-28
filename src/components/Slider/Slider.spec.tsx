@@ -20,8 +20,6 @@ describe("<Slider />", () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  ////// actual test
-
   describe("Slider should have a Heading", () => {
     test("Should render heading(H1) on screen  screen", () => {
       render(<Slider data={[mockData]} />);
