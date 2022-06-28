@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
-import Slider from "../Slider";
+import Slider from "./Slider";
 import * as React from "react";
 
 const mockData = {
