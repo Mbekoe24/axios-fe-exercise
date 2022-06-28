@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Slide /> Should render correctly 1`] = `
+<div
+  id=""
+>
+  <a
+    data-testid="story-link"
+    href=""
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <img
+      alt=""
+      data-testid="story-img"
+      src=""
+    />
+  </a>
+  <div
+    class="info-box"
+  >
+    <p />
+    <span>
+      <time>
+        Invalid Date
+      </time>
+       - 
+      
+    </span>
+  </div>
+</div>
+`;

@@ -11,14 +11,22 @@ const Slide = (props: SlideProps) => {
 
   return (
     <div id={props.htmlId}>
-      <a href={props.permaLink} target="_blank" rel="noopener noreferrer">
-        <img src={props.primaryImage} alt={props.altText || props.headline} />
+      <a
+        data-testid="story-link"
+        href={props.permaLink}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          data-testid="story-img"
+          src={props.primaryImage}
+          alt={props.altText || props.headline}
+        />
       </a>
       <div className="info-box">
         <p>{props.headline}</p>
         <span>
           <time>{formattedDate}</time> - {props.topicName}
-          {""}
         </span>
       </div>
     </div>

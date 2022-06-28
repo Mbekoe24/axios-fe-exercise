@@ -1,4 +1,3 @@
-
 module.exports = {
   roots: ["<rootDir>/src"],
   moduleFileExtensions: ["ts", "tsx", "js", "json", "jsx", "node"],
@@ -19,4 +18,5 @@ module.exports = {
     "/node_modules/",
     "^.+\\.module\\.(css|sass|scss)$",
   ],
+  setupFilesAfterEnv: ["<rootDir>/test/setup-tests.js"],
 };

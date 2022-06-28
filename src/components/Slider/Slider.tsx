@@ -8,7 +8,7 @@ const Slider = ({ data }: SliderProps) => {
   };
   return (
     <>
-      <h1>More from Axios.com</h1>
+      <h1 data-testid="axios-h1">More from Axios.com</h1>
       <div className=" news-slider">
         <div className="slides">
           {data && (
@@ -41,7 +41,11 @@ const Slider = ({ data }: SliderProps) => {
           })}
         </div>
       </div>
-      <button className="axios-button" onClick={handleClick}>
+      <button
+        data-testid="axios-btn"
+        className="axios-button"
+        onClick={handleClick}
+      >
         Visit Axios.com
       </button>
     </>
